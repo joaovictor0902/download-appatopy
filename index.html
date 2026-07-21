@@ -1,0 +1,970 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATOPY</title>
+    <meta
+      name="description"
+      content="Baixe o aplicativo da Fiomar distribuído pela ATOPY. Clique para baixar o APK e siga as instruções de instalação."
+    />
+    <meta property="og:title" content="ATOPY" />
+    <meta
+      property="og:description"
+      content="Baixe o aplicativo da Fiomar distribuído pela ATOPY."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="ATOPY" />
+    <meta name="theme-color" content="#EF6C1A" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --brand-orange: #ef6c1a;
+        --brand-orange-dark: #c9550e;
+        --brand-orange-light: #ff8a3d;
+        --brand-orange-soft: #fff4ec;
+        --brand-yellow: #f2bd1d;
+        --brand-blue: #3ba4f0;
+        --brand-blue-dark: #2384cf;
+        --ink: #1c1c1e;
+        --ink-soft: #3a3a3c;
+        --ink-muted: #636366;
+        --surface: #ffffff;
+        --bg: #fafafa;
+        --bg-alt: #f2f2f7;
+        --border-soft: #e5e5ea;
+        --wa: #25d366;
+        --shadow-primary: 0 10px 30px -10px rgba(239, 108, 26, 0.45);
+        --shadow-primary-lg: 0 24px 60px -12px rgba(239, 108, 26, 0.55);
+        --shadow-card: 0 1px 2px rgba(28, 28, 30, 0.06),
+          0 8px 24px -8px rgba(28, 28, 30, 0.12);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+        background-color: var(--bg);
+        color: var(--ink);
+        font-size: 1.0625rem;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+        min-height: 100vh;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: 800;
+        line-height: 1.1;
+      }
+
+      .text-glow-orange {
+        text-shadow: 0 0 24px rgba(239, 108, 26, 0.35);
+      }
+
+      .eyebrow {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-weight: 600;
+      }
+
+      .container-site {
+        max-width: 1100px;
+        margin-inline: auto;
+        padding-inline: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .container-site {
+          padding-inline: 2rem;
+        }
+      }
+
+      /* Fundo radial animado */
+      .hero-radial {
+        background-image: radial-gradient(
+            600px 420px at 78% 22%,
+            rgba(239, 108, 26, 0.14),
+            transparent 70%
+          ),
+          radial-gradient(
+            420px 320px at 12% 82%,
+            rgba(59, 164, 240, 0.08),
+            transparent 70%
+          );
+        background-size: 160% 160%;
+        animation: hero-drift 14s ease-in-out infinite alternate;
+      }
+
+      @keyframes hero-drift {
+        from {
+          background-position: 0% 0%;
+        }
+        to {
+          background-position: 100% 100%;
+        }
+      }
+
+      /* Header */
+      header.site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(250, 250, 250, 0.72);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(229, 229, 234, 0.6);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+        gap: 1rem;
+      }
+
+      .logo {
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+      }
+
+      .logo-badge {
+        height: 3rem;
+        width: auto;
+        display: inline-block;
+        flex-shrink: 0;
+      }
+
+      .logo-text {
+        font-family: "Poppins", system-ui, sans-serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+
+      .logo-text .a {
+        color: var(--brand-orange);
+      }
+      .logo-text .top {
+        color: var(--ink);
+      }
+      .logo-text .y {
+        color: var(--brand-blue);
+      }
+
+      .header-tag {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--ink-muted);
+        padding: 0.35rem 0.85rem;
+        border-radius: 9999px;
+        background: var(--surface);
+        border: 1px solid var(--border-soft);
+        white-space: nowrap;
+      }
+
+      .btn-instrucoes {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1rem;
+        border-radius: 9999px;
+        border: 1px solid var(--border-soft);
+        background: var(--surface);
+        color: var(--ink);
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: 600;
+        font-size: 0.875rem;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: var(--shadow-card);
+      }
+
+      .btn-instrucoes:hover {
+        background: var(--bg-alt);
+        border-color: var(--brand-orange);
+        box-shadow: var(--shadow-primary);
+      }
+
+      .btn-instrucoes:focus-visible {
+        outline: 2px solid var(--brand-orange);
+        outline-offset: 2px;
+      }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      .hero-grid {
+        position: relative;
+        display: grid;
+        gap: 3rem;
+        align-items: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      @media (min-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 3.5rem;
+          min-height: 70vh;
+        }
+      }
+
+      .eyebrow-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(239, 108, 26, 0.25);
+        background: var(--brand-orange-soft);
+        padding: 0.45rem 0.95rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--brand-orange-dark);
+      }
+
+      .eyebrow-pill .rocket {
+        animation: pulse 1.6s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.25);
+        }
+      }
+
+      .hero h1 {
+        font-size: clamp(2.1rem, 5.5vw, 4rem);
+        letter-spacing: -0.02em;
+      }
+
+      .hero h1 .accent {
+        position: relative;
+        color: var(--brand-orange);
+      }
+
+      .hero h1 .accent::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        height: 5px;
+        width: 100%;
+        border-radius: 9999px;
+        background: linear-gradient(
+          to right,
+          var(--brand-orange),
+          var(--brand-orange-light)
+        );
+        animation: underline-grow 0.8s ease forwards;
+        transform-origin: left;
+      }
+
+      @keyframes underline-grow {
+        from {
+          transform: scaleX(0);
+        }
+        to {
+          transform: scaleX(1);
+        }
+      }
+
+      .hero p.lead {
+        margin-top: 1.4rem;
+        max-width: 34rem;
+        font-size: 1.15rem;
+        color: var(--ink-muted);
+      }
+
+      .app-meta {
+        margin-top: 1.6rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.75rem;
+        list-style: none;
+      }
+
+      .app-meta li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--ink-soft);
+      }
+
+      .meta-dot {
+        color: var(--brand-orange);
+        font-size: 1.1rem;
+        line-height: 1;
+      }
+
+      /* Card de download */
+      .download-card {
+        position: relative;
+        margin-inline: auto;
+        width: 100%;
+        max-width: 26rem;
+        background: var(--surface);
+        border-radius: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: var(--shadow-card);
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .download-card .glow {
+        position: absolute;
+        inset: -40px;
+        background: radial-gradient(
+          closest-side,
+          rgba(239, 108, 26, 0.18),
+          transparent 70%
+        );
+        z-index: -1;
+        filter: blur(20px);
+        animation: glow-pulse 4s ease-in-out infinite;
+      }
+
+      @keyframes glow-pulse {
+        0%,
+        100% {
+          opacity: 0.55;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.9;
+          transform: scale(1.06);
+        }
+      }
+
+      .apk-icon {
+        height: 5.5rem;
+        width: 5.5rem;
+        margin: 0 auto 1rem;
+        display: grid;
+        place-items: center;
+        border-radius: 1.25rem;
+        background: linear-gradient(135deg, var(--brand-orange), var(--brand-orange-light));
+        color: #fff;
+        box-shadow: var(--shadow-primary);
+      }
+
+      .apk-icon svg {
+        height: 2.6rem;
+        width: 2.6rem;
+      }
+
+      .download-card h3 {
+        font-size: 1.6rem;
+      }
+
+      .download-card .subtitle {
+        color: var(--ink-muted);
+        font-size: 0.95rem;
+        margin-top: 0.25rem;
+      }
+
+      .file-pill {
+        margin: 1.25rem auto 0.25rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.45rem 0.85rem;
+        border-radius: 9999px;
+        background: var(--bg-alt);
+        border: 1px solid var(--border-soft);
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--ink-soft);
+      }
+
+      .file-pill .dot {
+        height: 0.5rem;
+        width: 0.5rem;
+        border-radius: 9999px;
+        background: var(--brand-orange);
+      }
+
+      .btn-download {
+        margin-top: 1.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+        border-radius: 9999px;
+        background: var(--brand-orange);
+        color: #fff;
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: 700;
+        font-size: 1.05rem;
+        padding: 1rem 1.5rem;
+        text-decoration: none;
+        box-shadow: var(--shadow-primary-lg);
+        transition: transform 0.18s ease, background-color 0.2s ease;
+      }
+
+      .btn-download:hover {
+        background: var(--brand-orange-dark);
+        transform: translateY(-3px);
+      }
+
+      .btn-download:active {
+        transform: translateY(-1px) scale(0.98);
+      }
+
+      .btn-download.started {
+        background: var(--brand-blue);
+      }
+      .btn-download.started:hover {
+        background: var(--brand-blue-dark);
+      }
+
+      .btn-download .spin {
+        display: none;
+        width: 1.1rem;
+        height: 1.1rem;
+        border: 2.5px solid rgba(255, 255, 255, 0.4);
+        border-top-color: #fff;
+        border-radius: 9999px;
+        animation: spin 0.8s linear infinite;
+      }
+
+      .btn-download.loading .spin {
+        display: inline-block;
+      }
+      .btn-download.loading .icon {
+        display: none;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .helper {
+        margin-top: 1rem;
+        font-size: 0.85rem;
+        color: var(--ink-muted);
+      }
+
+      /* Seção de instruções */
+      .instructions {
+        display: none;
+        margin-top: 3.5rem;
+        animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+
+      .instructions.show {
+        display: block;
+      }
+
+      @keyframes fade-up {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .instructions-head {
+        text-align: center;
+        max-width: 38rem;
+        margin-inline: auto;
+      }
+
+      .instructions-head h2 {
+        font-size: clamp(1.75rem, 4vw, 2.6rem);
+      }
+
+      .instructions-head p {
+        margin-top: 0.75rem;
+        color: var(--ink-muted);
+        font-size: 1.05rem;
+      }
+
+      .steps {
+        margin-top: 2.5rem;
+        display: grid;
+        gap: 1rem;
+        counter-reset: step;
+      }
+
+      @media (min-width: 720px) {
+        .steps {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .step {
+        position: relative;
+        display: flex;
+        gap: 1rem;
+        background: var(--surface);
+        border: 1px solid var(--border-soft);
+        border-radius: 1.25rem;
+        padding: 1.4rem 1.5rem;
+        box-shadow: var(--shadow-card);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .step:hover {
+        transform: translateY(-2px);
+      }
+
+      .step-num {
+        flex-shrink: 0;
+        height: 2.5rem;
+        width: 2.5rem;
+        display: grid;
+        place-items: center;
+        border-radius: 9999px;
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: 800;
+        font-size: 1.05rem;
+        color: #fff;
+        background: linear-gradient(135deg, var(--brand-orange), var(--brand-orange-light));
+        box-shadow: var(--shadow-primary);
+      }
+
+      .step-body {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .step-body h3 {
+        font-family: "Poppins", system-ui, sans-serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .step-body p {
+        margin-top: 0.3rem;
+        color: var(--ink-muted);
+        font-size: 0.95rem;
+      }
+
+      .step .kbd {
+        display: inline-block;
+        padding: 0.05rem 0.45rem;
+        border-radius: 0.4rem;
+        background: var(--bg-alt);
+        border: 1px solid var(--border-soft);
+        font-size: 0.88em;
+        font-weight: 700;
+        color: var(--ink-soft);
+        white-space: nowrap;
+      }
+
+      .step .file-hl {
+        color: var(--brand-orange-dark);
+        font-weight: 700;
+      }
+
+      .step.highlight {
+        border-color: rgba(239, 108, 26, 0.3);
+        background: linear-gradient(180deg, var(--brand-orange-soft), var(--surface));
+      }
+
+      .callout {
+        margin-top: 2rem;
+        display: flex;
+        gap: 0.85rem;
+        align-items: flex-start;
+        background: var(--brand-orange-soft);
+        border: 1px solid rgba(239, 108, 26, 0.2);
+        border-radius: 1.25rem;
+        padding: 1.25rem 1.5rem;
+        color: var(--ink-soft);
+        font-size: 0.98rem;
+      }
+
+      .callout .ico {
+        flex-shrink: 0;
+        font-size: 1.4rem;
+        line-height: 1;
+      }
+
+      .redownload-row {
+        margin-top: 1.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--ink-muted);
+      }
+
+      .redownload-row a {
+        color: var(--brand-orange-dark);
+        font-weight: 700;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.2s ease;
+      }
+
+      .redownload-row a:hover {
+        border-color: var(--brand-orange);
+      }
+
+      /* WhatsApp float */
+      .wa-float {
+        position: fixed;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        z-index: 60;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.85rem 1.1rem;
+        border-radius: 9999px;
+        background: var(--wa);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-decoration: none;
+        box-shadow: 0 12px 30px -8px rgba(37, 211, 102, 0.6);
+        transition: transform 0.2s ease;
+      }
+
+      .wa-float:hover {
+        transform: translateY(-3px);
+      }
+
+      /* Footer */
+      footer.site-footer {
+        margin-top: 2.5rem;
+        border-top: 1px solid var(--border-soft);
+        background: var(--surface);
+      }
+
+      @media (min-width: 768px) {
+        footer.site-footer {
+          margin-top: 1rem;
+        }
+      }
+
+      .footer-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.75rem;
+        padding-block: 1.25rem 2.5rem;
+      }
+
+      @media (min-width: 640px) {
+        .footer-inner {
+          flex-direction: row;
+          justify-content: space-between;
+          text-align: left;
+          gap: 1rem;
+          padding-block: 1.25rem;
+        }
+      }
+
+      .footer-logo-img {
+        height: 6rem;
+        width: auto;
+        display: block;
+      }
+
+      .footer-inner .small {
+        font-size: 0.825rem;
+        color: var(--ink-muted);
+        line-height: 1.45;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-radial,
+        .apk-icon,
+        .eyebrow-pill .rocket,
+        .download-card .glow,
+        .hero h1 .accent::after {
+          animation: none;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container-site header-inner">
+        <a href="#" class="logo" aria-label="ATOPY — voltar ao início">
+          <img src="logo/1.png" alt="ATOPY" class="logo-badge" aria-hidden="true" style="height: 7rem; width: auto; border-radius: 0;">
+        </a>
+        <button id="btnInstrucoes" class="btn-instrucoes" type="button" aria-label="Ver passo a passo da instalação">Ver passo a passo da instalação</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero-radial">
+        <div class="container-site hero-grid">
+          <div class="hero-copy">
+            <h1>
+              Baixe o app de vendas da
+              <span class="accent text-glow-orange">ATOPY</span>
+            </h1>
+            <p class="lead">
+              Clique no botão para baixar o aplicativo. Depois é só seguir o
+              passo a passo que aparece na tela para instalar no seu celular
+              Android.
+            </p>
+            <ul class="app-meta">
+              <li><span class="meta-dot" aria-hidden="true">●</span> Aplicativo Android (APK)</li>
+              <li><span class="meta-dot" aria-hidden="true">●</span> Instalação simples</li>
+              <li><span class="meta-dot" aria-hidden="true">●</span> Suporte pelo WhatsApp</li>
+            </ul>
+          </div>
+
+          <div class="download-card">
+            <span class="glow" aria-hidden="true"></span>
+            <div class="apk-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 3v12" />
+                <path d="m6 9 6 6 6-6" />
+                <path d="M5 21h14" />
+              </svg>
+            </div>
+            <h3>Fiomar</h3>
+            <p class="subtitle">Toque em baixar para iniciar o download</p>
+            <div class="file-pill">
+              <span class="dot" aria-hidden="true"></span>
+              fiomar_Fiomar.apk
+            </div>
+            <a
+              id="downloadBtn"
+              class="btn-download"
+              href="fiomar_Fiomar.apk"
+              download="fiomar_Fiomar.apk"
+            >
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 3v12" />
+                <path d="m6 9 6 6 6-6" />
+                <path d="M5 21h14" />
+              </svg>
+              <span class="spin" aria-hidden="true"></span>
+              <span class="label">Baixar agora</span>
+            </a>
+            <p class="helper">O download começa automaticamente no seu celular.</p>
+          </div>
+        </div>
+
+        <div class="container-site">
+          <section id="instrucoes" class="instructions" aria-live="polite">
+            <div class="instructions-head">
+              <span class="eyebrow-pill" style="background: var(--surface); border-color: var(--border-soft); color: var(--ink-soft);">
+                <span aria-hidden="true">✅</span>
+                Download concluído
+              </span>
+              <h2 style="margin-top: 1rem;">Como instalar o aplicativo</h2>
+              <p>
+                Quando terminar de baixar, siga os passos abaixo para instalar
+                o <strong>fiomar_Fiomar.apk</strong> no seu celular.
+              </p>
+            </div>
+
+            <ol class="steps">
+              <li class="step">
+                <span class="step-num">1</span>
+                <div class="step-body">
+                  <h3>Abra a notificação de download</h3>
+                  <p>
+                    Deslize a barra de notificações do celular e toque no
+                    aviso que aparece quando o download termina ou abra o
+                    download direto por ele.
+                  </p>
+                </div>
+              </li>
+
+              <li class="step">
+                <span class="step-num">2</span>
+                <div class="step-body">
+                  <h3>Acesse os Downloads do navegador</h3>
+                  <p>
+                    Caso prefira, abra o navegador e toque nos
+                    <span class="kbd">⋮</span> ( três pontinhos ) no canto
+                    superior direito, vá em
+                    <span class="kbd">Downloads</span> e toque sobre o arquivo
+                    <span class="file-hl">fiomar_Fiomar.apk</span>.
+                  </p>
+                </div>
+              </li>
+
+              <li class="step">
+                <span class="step-num">3</span>
+                <div class="step-body">
+                  <h3>Toque em instalar</h3>
+                  <p>
+                    Toque em <span class="kbd">instalar</span> para iniciar a
+                    instalação do aplicativo no seu celular.
+                  </p>
+                </div>
+              </li>
+
+              <li class="step highlight">
+                <span class="step-num">4</span>
+                <div class="step-body">
+                  <h3>Libere o bloqueio e confirme</h3>
+                  <p>
+                    Vai aparecer uma tela de bloqueio de segurança. Selecione
+                    <span class="kbd">mais detalhes</span> e depois
+                    <span class="kbd">instalar assim mesmo</span> para concluir.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <div class="callout">
+              <span class="ico" aria-hidden="true">⚠️</span>
+              <p>
+                Esse aviso de bloqueio é normal para arquivos APK instalados
+                fora da loja. O aplicativo da Fiomar é seguro, basta seguir os
+                passos acima para liberar a instalação. Em caso de dúvida, fale
+                com a gente pelo WhatsApp.
+              </p>
+            </div>
+
+            <p class="redownload-row">
+              Precisa baixar de novo?
+              <a href="fiomar_Fiomar.apk" download="fiomar_Fiomar.apk">Clique aqui para baixar o APK novamente</a>.
+            </p>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container-site footer-inner">
+        <a href="#" class="logo" aria-label="ATOPY">
+          <img src="logo/1.png" alt="ATOPY" class="footer-logo-img" aria-hidden="true">
+        </a>
+        <p class="small">
+          Distribuição do aplicativo Fiomar · ATOPY · a ferramenta certa pra
+          você ir além
+        </p>
+      </div>
+    </footer>
+
+    <a
+      class="wa-float"
+      href="https://wa.me/5544999473083"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar com a ATOPY no WhatsApp"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        width="20"
+        height="20"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.034zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+      </svg>
+      Ajuda
+    </a>
+
+    <script>
+      (function () {
+        var btn = document.getElementById("downloadBtn");
+        var btnInstrucoes = document.getElementById("btnInstrucoes");
+        var instructions = document.getElementById("instrucoes");
+        var label = btn.querySelector(".label");
+        var revealed = false;
+        var timer = null;
+
+        function showInstructions() {
+          if (revealed) return;
+          revealed = true;
+          instructions.classList.add("show");
+          // pequeno atraso para dar foco suave à seção
+          setTimeout(function () {
+            instructions.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 350);
+        }
+
+        btn.addEventListener("click", function () {
+          // feedback visual de download iniciado
+          btn.classList.add("loading", "started");
+          label.textContent = "Preparando download…";
+          clearTimeout(timer);
+          timer = setTimeout(function () {
+            btn.classList.remove("loading");
+            label.textContent = "Baixar novamente";
+          }, 1500);
+          // revela as instruções assim que o download for disparado
+          showInstructions();
+        });
+
+        // Botão de instruções no header
+        if (btnInstrucoes) {
+          btnInstrucoes.addEventListener("click", showInstructions);
+        }
+      })();
+    </script>
+  </body>
+</html>
