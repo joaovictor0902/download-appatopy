@@ -21,6 +21,9 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E"
     />
+    <link rel="icon" type="image/png" sizes="32x32" href="logo/icon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="logo/icon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="logo/icon/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -142,8 +145,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 72px;
+        height: 80px;
         gap: 1rem;
+      }
+
+      @media (min-width: 768px) {
+        .header-inner {
+          height: 88px;
+        }
       }
 
       .logo {
@@ -153,11 +162,30 @@
         gap: 0.55rem;
       }
 
+      .logo:focus-visible {
+        outline: 2px solid var(--brand-orange);
+        outline-offset: 4px;
+        border-radius: 6px;
+      }
+
       .logo-badge {
-        height: 3rem;
+        height: 44px;
         width: auto;
-        display: inline-block;
+        aspect-ratio: 3254 / 976;
+        display: block;
         flex-shrink: 0;
+        object-fit: contain;
+        transition: transform 0.2s ease;
+      }
+
+      .logo-badge:hover {
+        transform: scale(1.03);
+      }
+
+      @media (min-width: 768px) {
+        .logo-badge {
+          height: 50px;
+        }
       }
 
       .logo-text {
@@ -188,33 +216,55 @@
         white-space: nowrap;
       }
 
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-shrink: 0;
+      }
+
       .btn-instrucoes {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        padding: 0.6rem 1rem;
+        gap: 0.45rem;
+        padding: 0.55rem 0.95rem;
         border-radius: 9999px;
         border: 1px solid var(--border-soft);
         background: var(--surface);
         color: var(--ink);
         font-family: "Poppins", system-ui, sans-serif;
         font-weight: 600;
-        font-size: 0.875rem;
+        font-size: 0.85rem;
         cursor: pointer;
         text-decoration: none;
-        transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.18s ease;
         box-shadow: var(--shadow-card);
+        white-space: nowrap;
       }
 
       .btn-instrucoes:hover {
         background: var(--bg-alt);
         border-color: var(--brand-orange);
         box-shadow: var(--shadow-primary);
+        transform: translateY(-1px);
       }
 
       .btn-instrucoes:focus-visible {
         outline: 2px solid var(--brand-orange);
         outline-offset: 2px;
+      }
+
+      .btn-instrucoes.btn-primary-ghost {
+        background: var(--brand-orange-soft);
+        border-color: rgba(239, 108, 26, 0.35);
+        color: var(--brand-orange-dark);
+      }
+
+      .btn-instrucoes.btn-primary-ghost:hover {
+        background: var(--brand-orange);
+        color: #fff;
+        border-color: var(--brand-orange);
+        box-shadow: var(--shadow-primary);
       }
 
       /* Hero */
@@ -492,13 +542,30 @@
 
       /* Seção de instruções */
       .instructions {
-        display: none;
         margin-top: 3.5rem;
         animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
       }
 
       .instructions.show {
         display: block;
+      }
+
+      .video-shortcut-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin-top: 0.85rem;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--brand-orange-dark);
+        text-decoration: none;
+        transition: color 0.2s ease, transform 0.18s ease;
+      }
+
+      .video-shortcut-link:hover {
+        color: var(--brand-orange);
+        transform: translateY(-1px);
+        text-decoration: underline;
       }
 
       @keyframes fade-up {
@@ -670,20 +737,319 @@
         transition: transform 0.2s ease;
       }
 
-      .wa-float:hover {
+      /* Seção de Vídeos de Treinamento */
+      .videos-section {
+        margin-top: 3.5rem;
+        padding-top: 3rem;
+        padding-bottom: 2.5rem;
+        border-top: 1px solid var(--border-soft);
+      }
+
+      .videos-head {
+        text-align: center;
+        max-width: 44rem;
+        margin-inline: auto;
+      }
+
+      .videos-head h2 {
+        font-size: clamp(1.75rem, 4vw, 2.6rem);
+        margin-top: 1rem;
+        color: var(--ink);
+      }
+
+      .videos-head p {
+        margin-top: 0.75rem;
+        color: var(--ink-muted);
+        font-size: 1.05rem;
+      }
+
+      .videos-grid {
+        margin-top: 2.5rem;
+        display: grid;
+        gap: 2rem;
+      }
+
+      @media (min-width: 960px) {
+        .videos-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 2.25rem;
+          align-items: stretch;
+        }
+      }
+
+      .video-card {
+        background: var(--surface);
+        border: 1px solid var(--border-soft);
+        border-radius: 1.5rem;
+        padding: 1.5rem;
+        box-shadow: var(--shadow-card);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      }
+
+      @media (min-width: 768px) {
+        .video-card {
+          padding: 1.75rem;
+        }
+      }
+
+      .video-card:hover {
         transform: translateY(-3px);
+      }
+
+      .video-card.card-orange:hover {
+        border-color: rgba(239, 108, 26, 0.4);
+        box-shadow: var(--shadow-primary);
+      }
+
+      .video-card.card-blue:hover {
+        border-color: rgba(59, 164, 240, 0.45);
+        box-shadow: 0 16px 36px -12px rgba(59, 164, 240, 0.25);
+      }
+
+      .video-card-top {
+        margin-bottom: 1rem;
+      }
+
+      .video-meta-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.85rem;
+      }
+
+      .video-device-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.35rem 0.85rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .badge-orange {
+        background: var(--brand-orange-soft);
+        color: var(--brand-orange-dark);
+        border: 1px solid rgba(239, 108, 26, 0.25);
+      }
+
+      .badge-blue {
+        background: rgba(59, 164, 240, 0.1);
+        color: var(--brand-blue-dark);
+        border: 1px solid rgba(59, 164, 240, 0.28);
+      }
+
+      .video-duration {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--ink-muted);
+        background: var(--bg-alt);
+        padding: 0.3rem 0.65rem;
+        border-radius: 9999px;
+        border: 1px solid var(--border-soft);
+      }
+
+      .video-card h3 {
+        font-size: 1.25rem;
+        color: var(--ink);
+        line-height: 1.3;
+      }
+
+      .video-card .video-desc {
+        margin-top: 0.5rem;
+        font-size: 0.925rem;
+        color: var(--ink-muted);
+        line-height: 1.5;
+      }
+
+      /* Container do player de vídeo */
+      .video-frame {
+        position: relative;
+        background: #0f1013;
+        border-radius: 1.25rem;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+                    0 6px 20px rgba(0, 0, 0, 0.14);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-block: 0.5rem 1.25rem;
+      }
+
+      .video-frame video {
+        width: 100%;
+        max-height: 480px;
+        display: block;
+        object-fit: contain;
+        background: #000;
+        border-radius: 1.25rem;
+      }
+
+      @media (min-width: 960px) {
+        .video-frame video {
+          max-height: 520px;
+        }
+      }
+
+      /* Tópicos abordados no vídeo */
+      .video-topics-title {
+        font-family: "Poppins", system-ui, sans-serif;
+        font-size: 0.825rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: var(--ink-muted);
+        margin-top: auto;
+        padding-top: 0.5rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .video-topics-list {
+        list-style: none;
+        display: grid;
+        gap: 0.45rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      .video-topics-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.55rem;
+        font-size: 0.875rem;
+        color: var(--ink-soft);
+        line-height: 1.4;
+      }
+
+      .topic-icon {
+        flex-shrink: 0;
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 9999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.72rem;
+        font-weight: 800;
+        margin-top: 0.15rem;
+      }
+
+      .topic-icon-orange {
+        background: var(--brand-orange-soft);
+        color: var(--brand-orange-dark);
+      }
+
+      .topic-icon-blue {
+        background: rgba(59, 164, 240, 0.12);
+        color: var(--brand-blue-dark);
+      }
+
+      .video-card-footer {
+        margin-top: 1.25rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-soft);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-video-action {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.5rem 0.95rem;
+        border-radius: 9999px;
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: 600;
+        font-size: 0.825rem;
+        text-decoration: none;
+        cursor: pointer;
+        border: 1px solid var(--border-soft);
+        background: var(--surface);
+        color: var(--ink-soft);
+        transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.18s ease;
+      }
+
+      .btn-video-action:hover {
+        background: var(--bg-alt);
+        border-color: var(--brand-orange);
+        color: var(--brand-orange-dark);
+        transform: translateY(-1px);
+      }
+
+      .btn-video-action.action-blue:hover {
+        border-color: var(--brand-blue);
+        color: var(--brand-blue-dark);
+      }
+
+      .nav-text-short {
+        display: none;
+      }
+
+      @media (max-width: 640px) {
+        .container-site {
+          padding-inline: 1rem;
+        }
+        .header-inner {
+          height: 68px;
+          gap: 0.5rem;
+        }
+        .logo-badge {
+          height: 36px;
+        }
+        .header-actions {
+          gap: 0.4rem;
+        }
+        .btn-instrucoes {
+          padding: 0.42rem 0.75rem;
+          font-size: 0.8rem;
+        }
+        .nav-text-full {
+          display: none;
+        }
+        .nav-text-short {
+          display: inline;
+        }
+        .video-card {
+          padding: 1.2rem;
+        }
+        .video-frame video {
+          max-height: 420px;
+        }
+        .videos-section {
+          margin-top: 2.5rem;
+          padding-top: 2rem;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .logo-badge {
+          height: 32px;
+        }
       }
 
       /* Footer */
       footer.site-footer {
-        margin-top: 2.5rem;
+        margin-top: 2rem;
         border-top: 1px solid var(--border-soft);
         background: var(--surface);
       }
 
       @media (min-width: 768px) {
         footer.site-footer {
-          margin-top: 1rem;
+          margin-top: 1.25rem;
         }
       }
 
@@ -692,8 +1058,8 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 0.75rem;
-        padding-block: 1.25rem 2.5rem;
+        gap: 0.6rem;
+        padding-block: 0.85rem 1.15rem;
       }
 
       @media (min-width: 640px) {
@@ -702,14 +1068,26 @@
           justify-content: space-between;
           text-align: left;
           gap: 1rem;
-          padding-block: 1.25rem;
+          padding-block: 0.75rem;
         }
       }
 
       .footer-logo-img {
-        height: 6rem;
+        height: 32px;
         width: auto;
+        aspect-ratio: 3254 / 976;
         display: block;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .footer-logo-img:hover {
+        transform: scale(1.03);
+      }
+
+      @media (min-width: 768px) {
+        .footer-logo-img {
+          height: 38px;
+        }
       }
 
       .footer-inner .small {
@@ -736,9 +1114,25 @@
     <header class="site-header">
       <div class="container-site header-inner">
         <a href="#" class="logo" aria-label="ATOPY — voltar ao início">
-          <img src="logo/1.png" alt="ATOPY" class="logo-badge" aria-hidden="true" style="height: 7rem; width: auto; border-radius: 0;">
+          <img
+            src="assets/atopy-logo.png"
+            alt="ATOPY"
+            class="logo-badge"
+            width="167"
+            height="50"
+            decoding="async"
+          >
         </a>
-        <button id="btnInstrucoes" class="btn-instrucoes" type="button" aria-label="Ver passo a passo da instalação">Ver passo a passo da instalação</button>
+        <nav class="header-actions" aria-label="Navegação rápida">
+          <a href="#instrucoes" id="btnInstrucoes" class="btn-instrucoes" aria-label="Ver passo a passo da instalação">
+            <span class="nav-text-full">Passo a passo</span>
+            <span class="nav-text-short">Instalação</span>
+          </a>
+          <a href="#tutoriais" id="btnVideos" class="btn-instrucoes btn-primary-ghost" aria-label="Ver vídeos de treinamento">
+            <span class="nav-text-full">Vídeos tutoriais</span>
+            <span class="nav-text-short">Vídeos</span>
+          </a>
+        </nav>
       </div>
     </header>
 
@@ -810,15 +1204,19 @@
               <span class="label">Baixar agora</span>
             </a>
             <p class="helper">O download começa automaticamente no seu celular.</p>
+            <a href="#tutoriais" class="video-shortcut-link">
+              <span aria-hidden="true">🎬</span>
+              Ver vídeos tutoriais do aplicativo
+            </a>
           </div>
         </div>
 
         <div class="container-site">
           <section id="instrucoes" class="instructions" aria-live="polite">
             <div class="instructions-head">
-              <span class="eyebrow-pill" style="background: var(--surface); border-color: var(--border-soft); color: var(--ink-soft);">
-                <span aria-hidden="true">✅</span>
-                Download concluído
+              <span id="instrucoesPill" class="eyebrow-pill" style="background: var(--surface); border-color: var(--border-soft); color: var(--ink-soft);">
+                <span class="pill-icon" aria-hidden="true">📱</span>
+                <span class="pill-text">Passo a passo da instalação</span>
               </span>
               <h2 style="margin-top: 1rem;">Como instalar o aplicativo</h2>
               <p>
@@ -895,16 +1293,186 @@
           </section>
         </div>
       </section>
+
+      <!-- Seção de Vídeos de Treinamento (Abaixo do Tutorial de Instalação) -->
+      <section id="tutoriais" class="videos-section" aria-label="Vídeos tutoriais do aplicativo">
+        <div class="container-site">
+          <div class="videos-head">
+            <span class="eyebrow-pill" style="background: var(--surface); border-color: var(--border-soft); color: var(--brand-orange-dark);">
+              <span aria-hidden="true">🎬</span>
+              Tutoriais em Vídeo
+            </span>
+            <h2 style="margin-top: 1rem;">Como usar o aplicativo</h2>
+            <p>
+              Assista aos treinamentos práticos em vídeo com o passo a passo de navegação,
+              catálogo de produtos, consulta de clientes e emissão de pedidos no celular e no tablet.
+            </p>
+          </div>
+
+          <div class="videos-grid">
+            <!-- Vídeo 1: Celular -->
+            <article class="video-card card-orange" id="card-video-celular">
+              <div class="video-card-top">
+                <div class="video-meta-bar">
+                  <span class="video-device-badge badge-orange">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                      <line x1="12" y1="18" x2="12.01" y2="18"/>
+                    </svg>
+                    Vídeo 1
+                  </span>
+                  <span class="video-duration">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    9m 09s
+                  </span>
+                </div>
+                <h3>Navegação, Catálogo e Lançamento de Pedidos</h3>
+                <p class="video-desc">
+                  Treinamento mostrando o painel de vendas, consulta ao catálogo de produtos com fotos, seleção de clientes e digitação completa de pedidos com envio via WhatsApp.
+                </p>
+              </div>
+
+              <div class="video-frame">
+                <video
+                  controls
+                  playsinline
+                  preload="metadata"
+                  poster="videos-SAV/poster-celular.jpg"
+                  aria-label="Vídeo tutorial do SAV no celular"
+                >
+                  <source src="videos-SAV/tutorial-sav-celular.mp4" type="video/mp4" />
+                  Seu navegador não suporta a tag de vídeo.
+                </video>
+              </div>
+
+              <h4 class="video-topics-title">O que você vai ver neste vídeo:</h4>
+              <ul class="video-topics-list">
+                <li>
+                  <span class="topic-icon topic-icon-orange" aria-hidden="true">✓</span>
+                  <span>Painel inicial com resumo semanal e vendas acumuladas</span>
+                </li>
+                <li>
+                  <span class="topic-icon topic-icon-orange" aria-hidden="true">✓</span>
+                  <span>Portfólio de produtos e visualização de fotos</span>
+                </li>
+                <li>
+                  <span class="topic-icon topic-icon-orange" aria-hidden="true">✓</span>
+                  <span>Consulta e seleção de clientes cadastrados</span>
+                </li>
+                <li>
+                  <span class="topic-icon topic-icon-orange" aria-hidden="true">✓</span>
+                  <span>Inclusão de itens, descontos e envio do resumo pelo WhatsApp</span>
+                </li>
+              </ul>
+
+              <div class="video-card-footer">
+                <span class="helper" style="margin: 0; font-size: 0.8rem;">Dica: você pode assistir em tela cheia</span>
+                <button type="button" class="btn-video-action" data-video-index="0" aria-label="Abrir vídeo do celular em tela cheia">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="15 3 21 3 21 9"/>
+                    <polyline points="9 21 3 21 3 15"/>
+                    <line x1="21" y1="3" x2="14" y2="10"/>
+                    <line x1="3" y1="21" x2="10" y2="14"/>
+                  </svg>
+                  Tela cheia
+                </button>
+              </div>
+            </article>
+
+            <!-- Vídeo 2: Tablet -->
+            <article class="video-card card-blue" id="card-video-tablet">
+              <div class="video-card-top">
+                <div class="video-meta-bar">
+                  <span class="video-device-badge badge-blue">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                      <line x1="12" y1="18" x2="12.01" y2="18"/>
+                    </svg>
+                    Vídeo 2
+                  </span>
+                  <span class="video-duration">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    5m 09s
+                  </span>
+                </div>
+                <h3>Login, Filtro de Clientes e Pedido em PDF</h3>
+                <p class="video-desc">
+                  Treinamento autenticação no SAV, filtros avançados de clientes por cidade e endereço, inclusão de produtos com desconto e geração do pedido em PDF.
+                </p>
+              </div>
+
+              <div class="video-frame">
+                <video
+                  controls
+                  playsinline
+                  preload="metadata"
+                  poster="videos-SAV/poster-tablet.jpg"
+                  aria-label="Vídeo tutorial do SAV no tablet"
+                >
+                  <source src="videos-SAV/tutorial-sav-tablet.mp4" type="video/mp4" />
+                  Seu navegador não suporta a tag de vídeo.
+                </video>
+              </div>
+
+              <h4 class="video-topics-title">O que você vai ver neste vídeo:</h4>
+              <ul class="video-topics-list">
+                <li>
+                  <span class="topic-icon topic-icon-blue" aria-hidden="true">✓</span>
+                  <span>Login no Sistema de Automação de Vendas (SAV)</span>
+                </li>
+                <li>
+                  <span class="topic-icon topic-icon-blue" aria-hidden="true">✓</span>
+                  <span>Filtro e pesquisa rápida de clientes por cidade e endereço</span>
+                </li>
+                <li>
+                  <span class="topic-icon topic-icon-blue" aria-hidden="true">✓</span>
+                  <span>Abertura de pedido com observações comerciais e prazo</span>
+                </li>
+                <li>
+                  <span class="topic-icon topic-icon-blue" aria-hidden="true">✓</span>
+                  <span>Lançamento de produtos, cálculo de desconto e PDF</span>
+                </li>
+              </ul>
+
+              <div class="video-card-footer">
+                <span class="helper" style="margin: 0; font-size: 0.8rem;">Dica: você pode assistir em tela cheia</span>
+                <button type="button" class="btn-video-action action-blue" data-video-index="1" aria-label="Abrir vídeo do tablet em tela cheia">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="15 3 21 3 21 9"/>
+                    <polyline points="9 21 3 21 3 15"/>
+                    <line x1="21" y1="3" x2="14" y2="10"/>
+                    <line x1="3" y1="21" x2="10" y2="14"/>
+                  </svg>
+                  Tela cheia
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
       <div class="container-site footer-inner">
-        <a href="#" class="logo" aria-label="ATOPY">
-          <img src="logo/1.png" alt="ATOPY" class="footer-logo-img" aria-hidden="true">
+        <a href="#" class="logo" aria-label="ATOPY — voltar ao início">
+          <img
+            src="assets/atopy-logo.png"
+            alt="ATOPY"
+            class="footer-logo-img"
+            width="127"
+            height="38"
+            loading="lazy"
+            decoding="async"
+          >
         </a>
         <p class="small">
-          Distribuição do aplicativo Fiomar · ATOPY · a ferramenta certa pra
-          você ir além
+          ATOPY · a ferramenta certa pra você ir além
         </p>
       </div>
     </footer>
@@ -923,7 +1491,7 @@
         fill="currentColor"
         aria-hidden="true"
       >
-        <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.034zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+        <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.034zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
       </svg>
       Ajuda
     </a>
@@ -932,38 +1500,93 @@
       (function () {
         var btn = document.getElementById("downloadBtn");
         var btnInstrucoes = document.getElementById("btnInstrucoes");
+        var btnVideos = document.getElementById("btnVideos");
         var instructions = document.getElementById("instrucoes");
-        var label = btn.querySelector(".label");
-        var revealed = false;
+        var tutoriais = document.getElementById("tutoriais");
+        var label = btn ? btn.querySelector(".label") : null;
         var timer = null;
 
-        function showInstructions() {
-          if (revealed) return;
-          revealed = true;
-          instructions.classList.add("show");
-          // pequeno atraso para dar foco suave à seção
-          setTimeout(function () {
-            instructions.scrollIntoView({ behavior: "smooth", block: "start" });
-          }, 350);
+        function scrollToElement(elem) {
+          if (!elem) return;
+          elem.scrollIntoView({ behavior: "smooth", block: "start" });
         }
 
-        btn.addEventListener("click", function () {
-          // feedback visual de download iniciado
-          btn.classList.add("loading", "started");
-          label.textContent = "Preparando download…";
-          clearTimeout(timer);
-          timer = setTimeout(function () {
-            btn.classList.remove("loading");
-            label.textContent = "Baixar novamente";
-          }, 1500);
-          // revela as instruções assim que o download for disparado
-          showInstructions();
+        if (btn) {
+          btn.addEventListener("click", function () {
+            btn.classList.add("loading", "started");
+            if (label) label.textContent = "Preparando download…";
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+              btn.classList.remove("loading");
+              if (label) label.textContent = "Baixar novamente";
+            }, 1500);
+
+            var pill = document.getElementById("instrucoesPill");
+            if (pill) {
+              var icon = pill.querySelector(".pill-icon");
+              var text = pill.querySelector(".pill-text");
+              if (icon) icon.textContent = "✅";
+              if (text) text.textContent = "Download iniciado — Siga os passos abaixo";
+              pill.style.background = "var(--brand-orange-soft)";
+              pill.style.borderColor = "rgba(239, 108, 26, 0.35)";
+              pill.style.color = "var(--brand-orange-dark)";
+            }
+
+            setTimeout(function () {
+              scrollToElement(instructions);
+            }, 300);
+          });
+        }
+
+        if (btnInstrucoes) {
+          btnInstrucoes.addEventListener("click", function (e) {
+            e.preventDefault();
+            scrollToElement(instructions);
+          });
+        }
+
+        if (btnVideos) {
+          btnVideos.addEventListener("click", function (e) {
+            e.preventDefault();
+            scrollToElement(tutoriais);
+          });
+        }
+
+        // Coordenação de reprodução: pausar outro vídeo ao dar play em um
+        var videoElements = document.querySelectorAll(".video-frame video");
+        videoElements.forEach(function (vid) {
+          vid.addEventListener("play", function () {
+            videoElements.forEach(function (other) {
+              if (other !== vid && !other.paused) {
+                other.pause();
+              }
+            });
+          });
         });
 
-        // Botão de instruções no header
-        if (btnInstrucoes) {
-          btnInstrucoes.addEventListener("click", showInstructions);
-        }
+        // Botões de tela cheia
+        var fsButtons = document.querySelectorAll(".btn-video-action");
+        fsButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            var idx = parseInt(button.getAttribute("data-video-index"), 10);
+            var targetVideo = videoElements[idx];
+            if (!targetVideo) return;
+
+            if (targetVideo.paused) {
+              targetVideo.play().catch(function () {});
+            }
+
+            if (targetVideo.requestFullscreen) {
+              targetVideo.requestFullscreen();
+            } else if (targetVideo.webkitRequestFullscreen) {
+              targetVideo.webkitRequestFullscreen();
+            } else if (targetVideo.webkitEnterFullscreen) {
+              targetVideo.webkitEnterFullscreen(); // iOS Safari
+            } else if (targetVideo.msRequestFullscreen) {
+              targetVideo.msRequestFullscreen();
+            }
+          });
+        });
       })();
     </script>
   </body>

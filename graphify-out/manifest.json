@@ -1,0 +1,107 @@
+{
+  ".claude/settings.local.json": {
+    "mtime": 1784631884.4910047,
+    "ast_hash": "bcf4ff67fbd99f9ddc18b9975591b9c2",
+    "semantic_hash": "bcf4ff67fbd99f9ddc18b9975591b9c2"
+  },
+  ".agents/rules/graphify.md": {
+    "mtime": 1791492911.8392236,
+    "ast_hash": "a0e4d192b9e2e17256124dbfc8e24e6a",
+    "semantic_hash": "a0e4d192b9e2e17256124dbfc8e24e6a"
+  },
+  ".agents/workflows/graphify.md": {
+    "mtime": 1791492911.840221,
+    "ast_hash": "637776aa6f7496d069afe7520c845c8a",
+    "semantic_hash": "637776aa6f7496d069afe7520c845c8a"
+  },
+  ".github/copilot-instructions.md": {
+    "mtime": 1791492949.0142949,
+    "ast_hash": "2b23503628bf2ec71d067a85ca8948ab",
+    "semantic_hash": "2b23503628bf2ec71d067a85ca8948ab"
+  },
+  "index.html": {
+    "mtime": 1791547788.5018034,
+    "ast_hash": "114a88b5817d5822ab47a67198bee0f3",
+    "semantic_hash": ""
+  },
+  "assets/atopy-logo.png": {
+    "mtime": 1784631884.901129,
+    "ast_hash": "167d6c5e4164ed9d0d8ae1ef40b54b75",
+    "semantic_hash": "167d6c5e4164ed9d0d8ae1ef40b54b75"
+  },
+  "logo/1.original.png": {
+    "mtime": 1780005619.8958213,
+    "ast_hash": "a8590da7a1de3b5c595099028d807503",
+    "semantic_hash": "a8590da7a1de3b5c595099028d807503"
+  },
+  "logo/1.png": {
+    "mtime": 1784631884.901129,
+    "ast_hash": "167d6c5e4164ed9d0d8ae1ef40b54b75",
+    "semantic_hash": "167d6c5e4164ed9d0d8ae1ef40b54b75"
+  },
+  "logo/ATOPY FERRAMENTAS FOGUETE perfil.jpg": {
+    "mtime": 1779282616.9690704,
+    "ast_hash": "610d0dcb9c8872d7686d1f730da59cb4",
+    "semantic_hash": "610d0dcb9c8872d7686d1f730da59cb4"
+  },
+  "logo/ATOPY FOGUETE CURVAS 2.jpg": {
+    "mtime": 1779282617.2336617,
+    "ast_hash": "75ea8dc1a325d857bf17e8336d3f1171",
+    "semantic_hash": "75ea8dc1a325d857bf17e8336d3f1171"
+  },
+  "logo/ATOPY FOGUETE CURVAS.jpg": {
+    "mtime": 1779282616.9110749,
+    "ast_hash": "3d3bca8d3b3a2d58c73602e5b3b9cd32",
+    "semantic_hash": "3d3bca8d3b3a2d58c73602e5b3b9cd32"
+  },
+  "logo/ATOPY LOGO.png": {
+    "mtime": 1779296531.7465463,
+    "ast_hash": "167d6c5e4164ed9d0d8ae1ef40b54b75",
+    "semantic_hash": "167d6c5e4164ed9d0d8ae1ef40b54b75"
+  },
+  "logo/icon/android-chrome-192x192.png": {
+    "mtime": 1780512364.523381,
+    "ast_hash": "5daf5592bd815f4583bb53e72c4fca64",
+    "semantic_hash": "5daf5592bd815f4583bb53e72c4fca64"
+  },
+  "logo/icon/android-chrome-512x512.png": {
+    "mtime": 1780512364.5399437,
+    "ast_hash": "efc75000f0bdf572aee7430e2c08f842",
+    "semantic_hash": "efc75000f0bdf572aee7430e2c08f842"
+  },
+  "logo/icon/apple-touch-icon.png": {
+    "mtime": 1780512364.4204087,
+    "ast_hash": "da28d259d5625e0aca7de19ee94b82eb",
+    "semantic_hash": "da28d259d5625e0aca7de19ee94b82eb"
+  },
+  "logo/icon/favicon-16x16.png": {
+    "mtime": 1780512364.4652176,
+    "ast_hash": "1b586d1bf4b936e6a07b3980dfc6cc45",
+    "semantic_hash": "1b586d1bf4b936e6a07b3980dfc6cc45"
+  },
+  "logo/icon/favicon-32x32.png": {
+    "mtime": 1780512364.0,
+    "ast_hash": "fcb0c6fa5c8dee31dadb80d010fc26d2",
+    "semantic_hash": "fcb0c6fa5c8dee31dadb80d010fc26d2"
+  },
+  "videos-SAV/poster-celular.jpg": {
+    "mtime": 1791482880.384755,
+    "ast_hash": "a86995fd01597425bfdc4a46df72efc1",
+    "semantic_hash": "a86995fd01597425bfdc4a46df72efc1"
+  },
+  "videos-SAV/poster-tablet.jpg": {
+    "mtime": 1791482880.555303,
+    "ast_hash": "0d530d04a4ee48ceadfc818d038c4f1a",
+    "semantic_hash": "0d530d04a4ee48ceadfc818d038c4f1a"
+  },
+  "videos-SAV/tutorial-sav-celular.mp4": {
+    "mtime": 1791547729.0906951,
+    "ast_hash": "8c5d3451e0ff9fd4c1f6cbc8e4dcec91",
+    "semantic_hash": ""
+  },
+  "videos-SAV/tutorial-sav-tablet.mp4": {
+    "mtime": 1791547609.725123,
+    "ast_hash": "53688af3c7380ebc44fc48f00f8c5292",
+    "semantic_hash": ""
+  }
+}

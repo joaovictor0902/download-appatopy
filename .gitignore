@@ -1,0 +1,20 @@
+# OS & Editor
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.vscode/
+.claude/settings.local.json
+
+# Local backups
+*.original.*
+*.bak
+
+# Graphify machine-specific paths & cache
+graphify-out/cache/
+graphify-out/.graphify_python
+graphify-out/.graphify_root
+graphify-out/transcripts/
+graphify-out/20*
+

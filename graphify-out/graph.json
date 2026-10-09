@@ -1,0 +1,416 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "app_distribution_flow",
+        "label": "Fluxo de Distribui\u00e7\u00e3o e Instala\u00e7\u00e3o do Aplicativo",
+        "nodes": [
+          "index_app_landing_page",
+          "index_download_fiomar_apk",
+          "index_installation_tutorial"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.95,
+        "source_file": "index.html"
+      },
+      {
+        "id": "sav_multimedia_training",
+        "label": "Treinamento Multim\u00eddia do SAV",
+        "nodes": [
+          "index_video_training_section",
+          "videos_sav_poster_celular_video_preview",
+          "videos_sav_poster_tablet_video_preview"
+        ],
+        "relation": "implement",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.85,
+        "source_file": "index.html"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "graphify.md",
+      "file_type": "document",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "agents_rules_graphify",
+      "community": 4,
+      "norm_label": "graphify.md"
+    },
+    {
+      "label": "graphify",
+      "file_type": "document",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "agents_rules_graphify_graphify",
+      "community": 4,
+      "norm_label": "graphify"
+    },
+    {
+      "label": "graphify.md",
+      "file_type": "document",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "agents_workflows_graphify",
+      "community": 5,
+      "norm_label": "graphify.md"
+    },
+    {
+      "label": "Workflow: graphify",
+      "file_type": "document",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "agents_workflows_graphify_workflow_graphify",
+      "community": 5,
+      "norm_label": "workflow: graphify"
+    },
+    {
+      "label": "copilot-instructions.md",
+      "file_type": "document",
+      "source_file": ".github/copilot-instructions.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "github_copilot_instructions",
+      "community": 6,
+      "norm_label": "copilot-instructions.md"
+    },
+    {
+      "label": "graphify",
+      "file_type": "document",
+      "source_file": ".github/copilot-instructions.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "github_copilot_instructions_graphify",
+      "community": 6,
+      "norm_label": "graphify"
+    },
+    {
+      "label": "P\u00e1gina de Download do App ATOPY Fiomar",
+      "file_type": "document",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 0,
+      "norm_label": "pagina de download do app atopy fiomar",
+      "id": "index_app_landing_page"
+    },
+    {
+      "label": "Distribui\u00e7\u00e3o APK Fiomar",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 0,
+      "norm_label": "distribuicao apk fiomar",
+      "id": "index_download_fiomar_apk"
+    },
+    {
+      "label": "Passo a Passo de Instala\u00e7\u00e3o do APK",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 0,
+      "norm_label": "passo a passo de instalacao do apk",
+      "id": "index_installation_tutorial"
+    },
+    {
+      "label": "V\u00eddeos de Treinamento SAV (Celular e Tablet)",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 3,
+      "norm_label": "videos de treinamento sav (celular e tablet)",
+      "id": "index_video_training_section"
+    },
+    {
+      "label": "Canal de Suporte WhatsApp ATOPY",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 0,
+      "norm_label": "canal de suporte whatsapp atopy",
+      "id": "index_whatsapp_support"
+    },
+    {
+      "label": "Regra de Consulta ao Knowledge Graph Graphify",
+      "file_type": "document",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 1,
+      "norm_label": "regra de consulta ao knowledge graph graphify",
+      "id": "agents_rules_graphify_rule"
+    },
+    {
+      "label": "Workflow de Opera\u00e7\u00f5es Graphify",
+      "file_type": "document",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 7,
+      "norm_label": "workflow de operacoes graphify",
+      "id": "agents_workflows_graphify_workflow"
+    },
+    {
+      "label": "Instru\u00e7\u00f5es do Copilot para Knowledge Graph",
+      "file_type": "document",
+      "source_file": ".github/copilot-instructions.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 8,
+      "norm_label": "instrucoes do copilot para knowledge graph",
+      "id": "github_copilot_instructions_copilot_config"
+    },
+    {
+      "label": "Identidade Visual Logo ATOPY",
+      "file_type": "image",
+      "source_file": "assets/atopy-logo.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 2,
+      "norm_label": "identidade visual logo atopy",
+      "id": "assets_atopy_logo_brand_identity"
+    },
+    {
+      "label": "Ativo de Logo Redimensionado",
+      "file_type": "image",
+      "source_file": "logo/1.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 2,
+      "norm_label": "ativo de logo redimensionado",
+      "id": "logo_1_header_logo_asset"
+    },
+    {
+      "label": "\u00cdcone Web/Android Foguete ATOPY",
+      "file_type": "image",
+      "source_file": "logo/icon/android-chrome-192x192.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 2,
+      "norm_label": "icone web/android foguete atopy",
+      "id": "logo_icon_android_chrome_192_app_icon"
+    },
+    {
+      "label": "Thumbnail do Treinamento SAV Celular",
+      "file_type": "image",
+      "source_file": "videos-SAV/poster-celular.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 3,
+      "norm_label": "thumbnail do treinamento sav celular",
+      "id": "videos_sav_poster_celular_video_preview"
+    },
+    {
+      "label": "Thumbnail do Treinamento SAV Tablet",
+      "file_type": "image",
+      "source_file": "videos-SAV/poster-tablet.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 3,
+      "norm_label": "thumbnail do treinamento sav tablet",
+      "id": "videos_sav_poster_tablet_video_preview"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "agents_rules_graphify",
+      "target": "agents_rules_graphify_graphify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "agents_workflows_graphify",
+      "target": "agents_workflows_graphify_workflow_graphify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".github/copilot-instructions.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "github_copilot_instructions",
+      "target": "github_copilot_instructions_graphify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_app_landing_page",
+      "target": "assets_atopy_logo_brand_identity"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_app_landing_page",
+      "target": "index_download_fiomar_apk"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_app_landing_page",
+      "target": "index_installation_tutorial"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_app_landing_page",
+      "target": "index_video_training_section"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_app_landing_page",
+      "target": "index_whatsapp_support"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_video_training_section",
+      "target": "videos_sav_poster_celular_video_preview"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_video_training_section",
+      "target": "videos_sav_poster_tablet_video_preview"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "assets/atopy-logo.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "assets_atopy_logo_brand_identity",
+      "target": "logo_1_header_logo_asset"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/atopy-logo.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "assets_atopy_logo_brand_identity",
+      "target": "logo_icon_android_chrome_192_app_icon"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "app_distribution_flow",
+      "label": "Fluxo de Distribui\u00e7\u00e3o e Instala\u00e7\u00e3o do Aplicativo",
+      "nodes": [
+        "index_app_landing_page",
+        "index_download_fiomar_apk",
+        "index_installation_tutorial"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "index.html"
+    },
+    {
+      "id": "sav_multimedia_training",
+      "label": "Treinamento Multim\u00eddia do SAV",
+      "nodes": [
+        "index_video_training_section",
+        "videos_sav_poster_celular_video_preview",
+        "videos_sav_poster_tablet_video_preview"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.85,
+      "source_file": "index.html"
+    }
+  ],
+  "built_at_commit": "c433c0739be23bc939591c993ea30cd5e9612901"
+}
